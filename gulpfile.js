@@ -61,7 +61,7 @@ gulp.task('fractal:build', function(){
 gulp.task("server", function(db) {
   browser({
     server: {
-      baseDir: "./"//ドキュメントディレクトリを指定する。
+      baseDir: "./web/"//ドキュメントディレクトリを指定する。
     }
   });
   db();
@@ -79,14 +79,14 @@ gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
   .pipe(autoprefixer({//autoprefixer()...ベンダープレフィックスの付与
     cascade:false
   }))
-  .pipe(gulp.dest("./css"))//gulp.dest()...出力したい場所を記載
+  .pipe(gulp.dest("./web/css"))//gulp.dest()...出力したい場所を記載
   .pipe(gulp.dest(publicfolder));//gulp.dest()...出力したい場所を記載
  
   //./css/button.cssを別のフォルダに書き出す
   const items = ["button","layout","form"];
   // const items = ["button"];
   items.forEach(function (item){
-    gulp.src('./css/' + item + '.css')
+    gulp.src('./web/css/' + item + '.css')
     .pipe(gulp.dest(publicfolder))
     .pipe(gulp.dest(componentsfolder + item));
   });
