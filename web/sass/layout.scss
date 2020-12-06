@@ -1,2 +1,27 @@
 @charset "utf-8";
 @import "setting";
+
+$sp-size:$breakpoint-m - 1;
+// モバイルファースト
+.content-main{
+    box-sizing: border-box;
+    background:white;
+    margin:8px;
+    padding:8px;
+}
+
+// タブレット415pxから959pxまで
+@media screen and (min-width:$breakpoint-m){
+    .content-main{
+        // margin:8px auto;
+        // max-width:415px;
+    }    
+}
+
+//　PC用デザイン
+@media screen and (min-width:$breakpoint-l){
+    .content-main{
+        margin:8px auto;
+        max-width:800px;
+    }    
+}
