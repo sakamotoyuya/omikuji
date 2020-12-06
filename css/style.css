@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  background: yellow;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container:hover {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.test {
+  background-color: red;
+}

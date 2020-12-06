@@ -1,0 +1,13 @@
+@charset "utf-8";
+.container{
+  width:100%;
+  background: yellow;
+  transition:0.5s;
+  &:hover{
+    transform:scale(0.8);
+  }
+}
+
+.test{
+  background-color:red;
+}
