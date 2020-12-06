@@ -5,7 +5,7 @@ var autoprefixer = require("gulp-autoprefixer");
 var plumber = require("gulp-plumber");
 const fractal = require('@frctl/fractal').create();
 
-fractal.set('project.title', 'FooCorp Component Library'); // title for the project
+fractal.set('project.title', 'おみくじアプリのスタイルガイド'); // title for the project
 fractal.web.set('builder.dest', `${__dirname}/styleguide/build`); // destination for the static export
 fractal.docs.set('path', `${__dirname}/styleguide/docs`); // location of the documentation directory.
 fractal.components.set('path', `${__dirname}/styleguide/components`); // location of the component directory.
@@ -67,6 +67,9 @@ gulp.task("server", function(db) {
   db();
 });
 
+const publicfolder = "./styleguide/public/css/";
+const componentsfolder = "./styleguide/components/";
+
 gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
   gulp.src("sass/**/*.scss")//gulp.src()...読み込むファイルの設定
   .pipe(plumber())//plumber()...エラーが起きたとしても強制終了させない
@@ -77,18 +80,18 @@ gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
     cascade:false
   }))
   .pipe(gulp.dest("./css"))//gulp.dest()...出力したい場所を記載
-  // .pipe(gulp.dest("./styleguide/public/css"))//gulp.dest()...出力したい場所を記載
-  // .pipe(gulp.dest("./styleguide/components/example"));
-  gulp.src('./css/button.css')
-      .pipe(gulp.dest('./styleguide/public/css/'))
-      .pipe(gulp.dest('./styleguide/components/button/'));
+  .pipe(gulp.dest(publicfolder));//gulp.dest()...出力したい場所を記載
+ 
+  //./css/button.cssを別のフォルダに書き出す
+  const items = ["button","layout","form"];
+  // const items = ["button"];
+  items.forEach(function (item){
+    gulp.src('./css/' + item + '.css')
+    .pipe(gulp.dest(publicfolder))
+    .pipe(gulp.dest(componentsfolder + item));
+  });
   db();
 });
-
-// gulp.task('copy', function() {
-//   gulp.src('./css/button.css')
-//       .pipe(gulp.dest('./dist'));
-// });
 
 gulp.task("reload",function(db){
   browser.reload();//ブラウザーのリロード
