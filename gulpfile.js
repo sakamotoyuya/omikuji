@@ -29,7 +29,7 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI conso
  * This task will also log any errors to the console.
  */
 
-gulp.task('fractal:start', function(){
+gulp.task('fractal:start', function(db){
     const server = fractal.web.server({
         sync: true
     });
@@ -37,6 +37,8 @@ gulp.task('fractal:start', function(){
     return server.start().then(() => {
         logger.success(`Fractal server is now running at ${server.url}`);
     });
+    db();
+
 });
 
 /*
@@ -49,13 +51,15 @@ gulp.task('fractal:start', function(){
  * configuration option set above.
  */
 
-gulp.task('fractal:build', function(){
+gulp.task('fractal:build', function(db){
     const builder = fractal.web.builder();
     builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
     builder.on('error', err => logger.error(err.message));
     return builder.build().then(() => {
         logger.success('Fractal build completed!');
     });
+    db();
+
 });
 
 gulp.task("server", function(db) {
@@ -79,7 +83,7 @@ gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
   .pipe(autoprefixer({//autoprefixer()...ベンダープレフィックスの付与
     cascade:false
   }))
-  .pipe(gulp.dest("./web/css"))//gulp.dest()...出力したい場所を記載
+  .pipe(gulp.dest("./web/css/"))//gulp.dest()...出力したい場所を記載
   .pipe(gulp.dest(publicfolder));//gulp.dest()...出力したい場所を記載
  
   //./css/button.cssを別のフォルダに書き出す
@@ -103,12 +107,12 @@ gulp.task("watch",function(db){
   //タスク名をdefaultにするとコマンドにタスク名を入れる必要がなくなる。
 
   //scssファイルに更新があったらsassタスク、reloadタスクを実行する
-  gulp.watch("./**/sass/**/*.scss",gulp.parallel(["sass","reload"]));
+  gulp.watch("./web/sass/**/*.scss",gulp.parallel(["sass","reload"]));
   //htmlファイルに更新があったらreloadタスクを実行する
-  gulp.watch("./**/*.html",gulp.series(["reload"]));
+  gulp.watch(["./**/*.html","./**/*.hbs"],gulp.series(["reload"]));
   db();
 });
 
 //sassタスクwatchタスク、serverタスクを実行する。
 // gulp.task('default',gulp.series(gulp.parallel(['sass','watch','server'])));
-gulp.task('default',gulp.series(gulp.parallel(['fractal:start','fractal:build','sass','watch','server'])));
+gulp.task('default',gulp.series(gulp.parallel(['fractal:start','sass','fractal:build','watch','server'])));

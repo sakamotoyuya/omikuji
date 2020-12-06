@@ -1,7 +1,9 @@
 @charset "utf-8";
 @import "reset";
 @import "setting";
-
+body{
+  background-color: $color-background;
+}
 .container{
   width:100%;
   background: yellow;

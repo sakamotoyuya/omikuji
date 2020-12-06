@@ -181,7 +181,10 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../css/style.css"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../css/layout.css"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>レイアウトデザイン<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>レイアウトデザイン<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content-main"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>はじめましてはじめましてはじめましてはじめましてはじめまして<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
         
     </code>
 </div>
@@ -191,7 +194,10 @@
     <code class="Code Code--lang-handlebars hljs">
         <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{path '/css/style.css'}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{path '/css/layout.css'}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>レイアウトデザイン<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>レイアウトデザイン<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content-main"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>はじめましてはじめましてはじめましてはじめましてはじめまして<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
     </code>
 </div>
 
@@ -231,7 +237,19 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-CSS FileBrowser-code hljs">
-                                <pre></pre>
+                                <pre><span class="hljs-selector-class">.content-main</span> {
+  <span class="hljs-attribute">background</span>: white;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">414px</span>;
+}
+
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">960px</span>) {
+  <span class="hljs-selector-class">.content-main</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">16px</span>;
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">1024px</span>;
+  }
+}
+</pre>
                             </code>
                             
                         </div>
@@ -247,7 +265,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">0 Byte</span>
+                    <span class="Meta-value">176 Bytes</span>
                 </li>
             </ul>
         </div>
@@ -512,7 +530,7 @@
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2020-12-06T11:38:59.507Z">
+                            <time datetime="2020-12-06T14:37:33.266Z">
                                 12/6/2020
                             </time>
                         

@@ -1,0 +1,13 @@
+.content-main {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: white;
+  margin: 8px;
+  padding: 8px;
+}
+
+@media screen and (min-width: 960px) {
+  .content-main {
+    max-width: 800px;
+  }
+}
