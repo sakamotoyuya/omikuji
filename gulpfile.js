@@ -71,7 +71,7 @@ const publicfolder = "./styleguide/public/css/";
 const componentsfolder = "./styleguide/components/";
 
 gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
-  gulp.src("sass/**/*.scss")//gulp.src()...読み込むファイルの設定
+  gulp.src("./web/sass/**/*.scss")//gulp.src()...読み込むファイルの設定
   .pipe(plumber())//plumber()...エラーが起きたとしても強制終了させない
   .pipe(sass({outputStyle:'expanded'}))
   //pipe()...srcで取得したファイルに行う処理を記載
@@ -103,7 +103,7 @@ gulp.task("watch",function(db){
   //タスク名をdefaultにするとコマンドにタスク名を入れる必要がなくなる。
 
   //scssファイルに更新があったらsassタスク、reloadタスクを実行する
-  gulp.watch("sass/**/*.scss",gulp.parallel(["sass","reload"]));
+  gulp.watch("./**/sass/**/*.scss",gulp.parallel(["sass","reload"]));
   //htmlファイルに更新があったらreloadタスクを実行する
   gulp.watch("./**/*.html",gulp.series(["reload"]));
   db();
