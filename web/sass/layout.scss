@@ -1,24 +1,46 @@
 @charset "utf-8";
 @import "setting";
 
-$sp-size:$breakpoint-m - 1;
 // モバイルファースト
 .content-main{
-    box-sizing: border-box;
     background:white;
     margin:8px;
     padding:8px;
 }
 
-// タブレット415pxから959pxまで
-@media screen and (min-width:$breakpoint-m){
-    .content-main{
-        // margin:8px auto;
-        // max-width:415px;
-    }    
+.content-block{
+    padding: 0 8px;
+    margin-bottom: 16px;
+    &.center{
+        text-align:center;
+    }
+    .content-block-horizontal{
+        text-align:left
+    }
 }
 
-//　PC用デザイン
+.content-block-horizontal{
+    display:inline-block;
+    padding: 0 8px;
+    margin-bottom:16px;
+    vertical-align: top;
+    &.align-middle{
+        vertical-align: middle;
+    }
+    &.align-bottom{
+        vertical-align: bottom;
+    }
+}
+
+// タブレット415pxから959pxまで
+@media screen and (min-width:$breakpoint-m){
+    // .content-main{
+    //     margin:8px auto;
+    //     max-width:415px;
+    // }    
+}
+
+//　PC用デザイン960pxから
 @media screen and (min-width:$breakpoint-l){
     .content-main{
         margin:8px auto;
