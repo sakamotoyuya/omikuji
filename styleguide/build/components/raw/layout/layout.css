@@ -1,12 +1,14 @@
 .content-main {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   background: white;
-  margin: 16px;
-  width: 414px;
+  margin: 8px;
+  padding: 8px;
 }
 
 @media screen and (min-width: 960px) {
   .content-main {
-    margin: 16px;
-    max-width: 1024px;
+    margin: 8px auto;
+    max-width: 800px;
   }
 }
