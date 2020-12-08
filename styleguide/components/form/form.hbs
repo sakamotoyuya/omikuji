@@ -1,3 +1,53 @@
 <link rel="stylesheet" href="{{path '/css/style.css'}}">
+<link rel="stylesheet" href="{{path '/css/layout.css'}}">
+<link rel="stylesheet" href="{{path '/css/button.css'}}">
 <link rel="stylesheet" href="{{path '/css/form.css'}}">
-<h1>フォームデザイン</h1>
+<div class="content-main">
+    <h1>フォームデザイン</h1>
+    <div class="content-block">
+        <h2>type text</h2>
+        <input type="text">
+    </div>
+
+    <div class="content-block">
+        <h2>type password</h2>
+        <input type="password">
+    </div>
+    <div class="content-block">
+        <h2>type radio</h2>
+        <div>
+            <input type="radio" id="huey" name="drone" value="huey"
+                    checked>
+            <label for="huey">Huey</label>
+        </div>
+        <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Dewey</label>
+        </div>
+        <div>
+            <input type="radio" id="louie" name="drone" value="louie">
+            <label for="louie">Louie</label>
+        </div>
+    </div>
+    <div class="content-block">
+        <h2>type checkbox</h2>
+        <div>
+            <input type="checkbox" id="sample1">
+            <label for="sample1">sample1</label>
+        </div>
+        <div>
+            <input type="checkbox" id="sample2">
+            <label for="sample2">sample2</label>
+        </div>
+        <div>
+            <label>
+            <input type="checkbox" id="sample3">
+                sample3
+                </label>
+        </div>
+    </div>
+    <div class="content-block">
+        <h2>type submit</h2>
+        <input type="submit" class="btn btn-b-theme">
+    </div>
+</div>

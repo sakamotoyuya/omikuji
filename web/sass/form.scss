@@ -1,2 +1,22 @@
 @charset "utf-8";
 @import "setting";
+input{
+    &[type]{
+        appearance: none;
+    }
+    &[type="text"],&[type="password"]{
+        padding: 15px 20px;
+        font-size:16px;
+        border-radius: 45px;
+        border:solid 1px black;
+    }
+    &[type="radio"]{
+
+    }
+    &[type="checkbox"]{
+
+    }
+    // &[type="submit"]{
+
+    // }
+}
