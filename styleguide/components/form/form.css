@@ -18,7 +18,7 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="radio"] {
-  margin: 8px;
+  margin: 5px;
   position: relative;
   border-radius: 50%;
   border: 1px solid black;
