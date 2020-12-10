@@ -1,7 +1,17 @@
+label {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 input[type] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
 }
 
 input[type="text"], input[type="password"] {
@@ -9,4 +19,49 @@ input[type="text"], input[type="password"] {
   font-size: 16px;
   border-radius: 45px;
   border: solid 1px black;
+}
+
+input[type="radio"] {
+  margin: 5px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input[type="radio"]:before {
+  content: "";
+  display: block;
+  -webkit-box-shadow: 0 0 2px 0.2rem rgba(0, 108, 255, 0.5);
+  box-shadow: 0 0 2px 0.2rem rgba(0, 108, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  background: #006CFF;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input[type="radio"]:checked {
+  border: 1px solid #006CFF;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input[type="radio"]:checked:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
