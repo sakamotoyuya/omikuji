@@ -29,7 +29,6 @@ input{
         border: 1px solid black;
         width:40px;
         height:40px;
-        transition: .2s;
         &:before{
             content:"";
             display:block;
@@ -48,7 +47,6 @@ input{
         &:checked{
             border: 1px solid $color-success;
             box-shadow: 0 0 0 .2rem rgba($color: $color-success, $alpha: 0.5);
-            transition: .2s;
             &:before{
                 transform:scale(1);
             }
@@ -57,33 +55,30 @@ input{
     &[type="checkbox"]{
         margin:5px;
         position: relative;
-        border-radius: 50%;
         border: 1px solid black;
+        border-radius: 5px;
         width:40px;
         height:40px;
         box-shadow: 0 0 0 0;
-        transition: .2s;
         &:before{
             content:"";
             display:block;
-            box-shadow: 0 0 2px .2rem rgba($color: $color-success, $alpha: 0.5);
-            border-radius: 50%;
             position: absolute;
-            left:11px;
-            top:11px;
+            left:14px;
+            top:7px;
             margin: auto;
-            width:16px;
-            height:16px;
-            background:$color-success;
-            transform:scale(0);
+            width:8px;
+            height:17px;
+            border-right: 3px solid $color-success;
+            border-bottom: 3px solid $color-success;
+            transform:scale(0) rotate(45deg);
             transition:.2s;
         }
         &:checked{
             border: 1px solid $color-success;
             box-shadow: 0 0 0 .2rem rgba($color: $color-success, $alpha: 0.5);
-            transition: .2s;
             &:before{
-                transform:scale(1);
+                transform:scale(1) rotate(45deg);
             }
         }    
     }

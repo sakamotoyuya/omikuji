@@ -28,8 +28,6 @@ input[type="radio"] {
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 input[type="radio"]:before {
@@ -56,8 +54,6 @@ input[type="radio"]:checked {
   border: 1px solid #006CFF;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 input[type="radio"]:checked:before {
@@ -69,32 +65,28 @@ input[type="radio"]:checked:before {
 input[type="checkbox"] {
   margin: 5px;
   position: relative;
-  border-radius: 50%;
   border: 1px solid black;
+  border-radius: 4px;
   width: 40px;
   height: 40px;
   -webkit-box-shadow: 0 0 0 0;
   box-shadow: 0 0 0 0;
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 input[type="checkbox"]:before {
   content: "";
   display: block;
-  -webkit-box-shadow: 0 0 2px 0.2rem rgba(0, 108, 255, 0.5);
-  box-shadow: 0 0 2px 0.2rem rgba(0, 108, 255, 0.5);
-  border-radius: 50%;
   position: absolute;
-  left: 11px;
-  top: 11px;
+  left: 14px;
+  top: 7px;
   margin: auto;
-  width: 16px;
-  height: 16px;
-  background: #006CFF;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
+  width: 8px;
+  height: 17px;
+  border-right: 3px solid #006CFF;
+  border-bottom: 3px solid #006CFF;
+  -webkit-transform: scale(0) rotate(45deg);
+  -ms-transform: scale(0) rotate(45deg);
+  transform: scale(0) rotate(45deg);
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -103,14 +95,12 @@ input[type="checkbox"]:checked {
   border: 1px solid #006CFF;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(0, 108, 255, 0.5);
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 input[type="checkbox"]:checked:before {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(1) rotate(45deg);
+  -ms-transform: scale(1) rotate(45deg);
+  transform: scale(1) rotate(45deg);
 }
 
 input[type="submit"] {
