@@ -6,6 +6,45 @@ label{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+.input-label{
+    z-index:0;
+    margin:auto;
+    display:inline-block;
+    position: relative;
+    width:240px;
+    height:72px;
+    border-radius: 45px;
+    background:transparent;
+    
+    label{
+        position: absolute;
+        z-index: 0;
+        color:gray;
+        transition: .2s;
+        font-size:16px;
+    }
+    input{
+        position:absolute;
+        z-index:1;
+        left: 0;
+        top: 0;
+        background:rgba(0,0,0,0);
+        &:placeholder-shown{
+            + label{
+                top:15px;
+                left:20px;
+            }
+        }
+        &:not(placeholder-shown){
+            + label{
+                top:-20px;
+                left:-10px;
+                transform: scale(0.8);
+            }
+        }
+    }
+}
+
 input{
     &[type]{
         appearance: none;
@@ -71,7 +110,7 @@ input{
             height:17px;
             border-right: 3px solid $color-success;
             border-bottom: 3px solid $color-success;
-            transform:scale(0) rotate(45deg);
+            transform:scale(0) rotate(90deg);
             transition:.2s;
         }
         &:checked{
