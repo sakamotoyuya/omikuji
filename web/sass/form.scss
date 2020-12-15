@@ -6,46 +6,63 @@ label{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.input-label{
-    z-index:0;
-    display:inline-block;
-    margin: 16px 16px 16px 0;
-    position: relative;
-    width: 240px;
-    height: 46px;
-    border-radius: 45px;
-    box-sizing: border-box;
-    background:transparent;
-    
-    label{
-        position: absolute;
-        z-index: 0;
-        color:gray;
-        transition: .2s;
-        font-size: 20px;
+.input-wrap{
+    display: inline-block;
+    margin: 0 16px 16px 0;
+    padding-top:24px;
+    .input-label{
+        z-index:0;
+        display:inline-block;
+        margin: 0;
+        position: relative;
+        width: 240px;
+        height: 46px;
+        border-radius: 45px;
         box-sizing: border-box;
-    }
-    input{
-        position:absolute;
-        z-index:1;
-        width: 100%;
-        height:100%;
-        background:rgba(0,0,0,0);
-        box-sizing: border-box;
-        &:placeholder-shown{
-            + label{
-                top:11px;
-                left:0px;
-                right:0;
-                bottom:0;
+        background:transparent;
+        
+        label{
+            position: absolute;
+            z-index: 0;
+            color:gray;
+            transition: .2s;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+        input{
+            position:absolute;
+            z-index:1;
+            width: 100%;
+            height:100%;
+            background:rgba(0,0,0,0);
+            box-sizing: border-box;
+            &:placeholder-shown{
+                + label{
+                    top:12px;
+                    left:0px;
+                    right:0;
+                    bottom:0;
+                }
+            }
+            &:not(placeholder-shown){
+                + label{
+                    top:-24px;
+                    left:-12px;
+                    right:0;
+                    transform: scale(0.8);
+                }
             }
         }
-        &:not(placeholder-shown){
-            + label{
-                top:-24px;
-                left:-12px;
-                right:0;
-                transform: scale(0.8);
+    
+        &.error{
+            input{
+                box-sizing: border-box;
+                box-shadow: 0 0 0 .2rem rgba($color: $color-danger, $alpha: 0.5);
+            }
+            & + p{
+                margin:8px 0 0 16px;
+                color:$color-danger;
+                font-size:14px;
             }
         }
     }
@@ -58,7 +75,8 @@ input{
     }
     &:focus{
         outline:none;
-        box-shadow: 0 0 0 .2rem rgba($color: $color-success, $alpha: 0.5)
+        //フォーカス時はエラースタイルでも枠は青くしたいので!importantを付与する
+        box-shadow: 0 0 0 .2rem rgba($color: $color-success, $alpha: 0.5) !important;
     }
 
     &[type="text"],&[type="password"]{
