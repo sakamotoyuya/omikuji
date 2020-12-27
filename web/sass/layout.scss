@@ -32,6 +32,10 @@
     }
 }
 
+.text-center{
+    text-align:center;
+}
+
 // タブレット415pxから959pxまで
 @media screen and (min-width:$breakpoint-m){
     // .content-main{

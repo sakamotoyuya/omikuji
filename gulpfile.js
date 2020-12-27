@@ -87,7 +87,7 @@ gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
   .pipe(gulp.dest(publicfolder));//gulp.dest()...出力したい場所を記載
  
   //./css/button.cssを別のフォルダに書き出す
-  const items = ["button","layout","form"];
+  const items = ["button","layout","form","table","common","card"];
   // const items = ["button"];
   items.forEach(function (item){
     gulp.src('./web/css/' + item + '.css')

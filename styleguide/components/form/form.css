@@ -43,7 +43,7 @@ label {
 }
 
 .input-wrap .input-label input:placeholder-shown + label {
-  top: 13px;
+  top: 12px;
   left: 0px;
   right: 0;
   bottom: 0;
