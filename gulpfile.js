@@ -31,7 +31,8 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI conso
 
 gulp.task('fractal:start', function(db){
     const server = fractal.web.server({
-        sync: true
+        sync: true,
+        port:3005//fractalサーバのポート設定
     });
     server.on('error', err => logger.error(err.message));
     return server.start().then(() => {
@@ -55,10 +56,13 @@ gulp.task('fractal:build', function(db){
     const builder = fractal.web.builder();
     builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
     builder.on('error', err => logger.error(err.message));
-    return builder.build().then(() => {
-        logger.success('Fractal build completed!');
+    return builder.start().then(() => {
+      logger.success('Fractal build completed!');
     });
     db();
+    // return builder.build().then(() => {
+    //     logger.success('Fractal build completed!');
+    // });
 
 });
 
@@ -66,7 +70,11 @@ gulp.task("server", function(db) {
   browser({
     server: {
       baseDir: "./web/"//ドキュメントディレクトリを指定する。
-    }
+    },
+    port:3004,//サーバポート設定
+    ui:{
+      port:4000//UIポート設定
+    },
   });
   db();
 });
@@ -87,7 +95,7 @@ gulp.task("sass",function(db){//タスクの登録（"sass"タスク登録)
   .pipe(gulp.dest(publicfolder));//gulp.dest()...出力したい場所を記載
  
   //./css/button.cssを別のフォルダに書き出す
-  const items = ["button","layout","form","table","common","card"];
+  const items = ["button","layout","form","table","common","card","style"];
   // const items = ["button"];
   items.forEach(function (item){
     gulp.src('./web/css/' + item + '.css')
@@ -115,4 +123,5 @@ gulp.task("watch",function(db){
 
 //sassタスクwatchタスク、serverタスクを実行する。
 // gulp.task('default',gulp.series(gulp.parallel(['sass','watch','server'])));
-gulp.task('default',gulp.series(gulp.parallel(['fractal:start','sass','fractal:build','watch','server'])));
+// gulp.task('default',gulp.series(gulp.parallel(['fractal:start','sass','fractal:build','watch','server'])));
+gulp.task('default',gulp.series(['fractal:start','sass','fractal:build','watch','server']));
