@@ -4,7 +4,9 @@ var browser = require("browser-sync");
 var autoprefixer = require("gulp-autoprefixer");
 var plumber = require("gulp-plumber");
 const fractal = require('@frctl/fractal').create();
-
+const port_fractal = 3000;//フラクタルサーバポート
+const port_server = 4000;//アプリサーバポート
+const port_ui = 5000;//アプリUIポート
 fractal.set('project.title', 'おみくじアプリのスタイルガイド'); // title for the project
 fractal.web.set('builder.dest', `${__dirname}/styleguide/build`); // destination for the static export
 fractal.docs.set('path', `${__dirname}/styleguide/docs`); // location of the documentation directory.
@@ -14,6 +16,14 @@ fractal.components.set('path', `${__dirname}/styleguide/components`); // locatio
  * webの場所を設定
  */
 fractal.web.set('static.path', __dirname + '/styleguide/public');
+
+// fractal.web.set('server.port',8080);//fractalサーバのポート設定
+// fractal.web.set('server.syncOptions',{
+//   open:true,
+//   browser:['chrome'],//ブラウザを何で開くか指定
+//   notify:true,//開けなかったときの通知を出すか指定
+//   ui:{port:11111}//ポート指定
+// });
 
 // any other configuration or customisation here
 
@@ -32,7 +42,7 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI conso
 gulp.task('fractal:start', function(db){
     const server = fractal.web.server({
         sync: true,
-        port:3005//fractalサーバのポート設定
+        port:port_fractal//fractalサーバのポート設定
     });
     server.on('error', err => logger.error(err.message));
     return server.start().then(() => {
@@ -71,9 +81,9 @@ gulp.task("server", function(db) {
     server: {
       baseDir: "./web/"//ドキュメントディレクトリを指定する。
     },
-    port:3004,//サーバポート設定
+    port:port_server,//サーバポート設定
     ui:{
-      port:4000//UIポート設定
+      port:port_ui//UIポート設定
     },
   });
   db();
