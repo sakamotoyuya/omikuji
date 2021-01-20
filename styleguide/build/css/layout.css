@@ -32,6 +32,10 @@
   vertical-align: bottom;
 }
 
+.text-center {
+  text-align: center;
+}
+
 @media screen and (min-width: 960px) {
   .content-main {
     margin: 8px auto;
