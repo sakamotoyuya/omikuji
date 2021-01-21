@@ -1,5 +1,10 @@
 @charset "utf-8";
 @import "setting";
+@import "button";
+@import "card";
+@import "form";
+@import "layout";
+@import "table";
 
 @for $i from 0 through 10 {
     .mt#{$i} {
