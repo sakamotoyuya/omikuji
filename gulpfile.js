@@ -130,19 +130,20 @@ gulp.task(task_server, function(db) {
  */
 gulp.task(task_sass,function(db){
   /* sassのコンパイル(./web/sass → ./web/css) */
-  gulp.src(dir_sass)                        //gulp.src()...読み込むファイルの設定
-    .pipe(plumber())                        //plumber()...エラーが起きたとしても強制終了させない
-    .pipe(sass({outputStyle:'expanded'}))   //sassからcssを圧縮して出力する
-                                            //pipe()...srcで取得したファイルに行う処理を記載
-                                            //sass()...コンパイルの実行をする。outputStyleで吐き出すcssのスタイルを設定
-    .pipe(autoprefixer({                    //autoprefixer()...ベンダープレフィックスの付与
+  gulp.src(dir_sass)                        // gulp.src()...読み込むファイルの設定
+    .pipe(plumber())                        // plumber()...エラーが起きたとしても強制終了させない
+    .pipe(sass({outputStyle:'expanded'}))   // sassからcssを圧縮して出力する
+                                            // pipe()...srcで取得したファイルに行う処理を記載
+                                            // sass()...コンパイルの実行をする。outputStyleで吐き出すcssのスタイルを設定
+    .pipe(autoprefixer({                    // autoprefixer()...ベンダープレフィックスの付与
       cascade:false
     }))
-    .pipe(gulp.dest("./web/css/"));         //gulp.dest()...出力したい場所を記載
+    .pipe(gulp.dest(dir_app + "/css"))         // gulp.dest()...出力したい場所を記載
+    .pipe(gulp.dest(dir_assets + "/css")); // 変換したファイルをコピー(./web/css/** → ./assets/css)
 
   /* ディレクトリごとコピー(./web/css/** → ./assets/css) */
-  gulp.src(__dirname + "/web/css/**")
-    .pipe(gulp.dest(dir_assets + "/css"));
+  // gulp.src(__dirname + "/web/css/**")
+  //   .pipe(gulp.dest(dir_assets + "/css"));
 
   /* ディレクトリごとコピー()./web/sass/** → ./assets/sass) */
   gulp.src(__dirname + "/web/sass/**")
