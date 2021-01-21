@@ -44,7 +44,7 @@ npm install @frctl/fractal --save-dev
   - 静的ディレクトリ
     `web/css`、`web/sass`からコピーされて生成される  
     静的ディレクトリはgulpfile.jsで指定
-  - styleguideはこのディレクトリをルートパスとして`{{ path '/css/button.css' }}`のように指定可能
+  - styleguideはこのディレクトリをルートパスとして`{{ path '/css/style.css' }}`のように指定可能
 - styleguide/build
   - スタイルガイドの静的WebUIディレクトリ　　
     gulp処理中の`fractal:build`にて本ディレクトリが生成される
