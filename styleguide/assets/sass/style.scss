@@ -3,12 +3,12 @@
 @import "setting";
 
 html{
-  font-size: 62.5%;
+  font-size: $font-size-html;
 }
 
 body{
-  font-size: 1.6rem;
-  line-height:1.7;
+  font-size: $font-size-body;
+  line-height: $line-height;
   background-color: $color-background;
 }
 
@@ -18,12 +18,20 @@ body{
 // h4 { font-size: 1.8rem; }
 // h5 { font-size: 1.3rem; }
 // h6 { font-size: 1.1rem; }
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.12em; }
-h5 { font-size: .83em; }
-h6 { font-size: .75em; }
+
+// h1 { font-size: 2em; line-height:1.2;}
+// h2 { font-size: 1.5em; }
+// h3 { font-size: 1.17em; }
+// h4 { font-size: 1.12em; }
+// h5 { font-size: .83em; }
+// h6 { font-size: .75em; }
+
+h1 { font-size: 3.0em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2.0em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1.0em; }
 
 .container{
   width:100%;

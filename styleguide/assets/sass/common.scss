@@ -35,3 +35,28 @@
         padding-left: #{$i * 8}px !important;
     }    
 }
+
+.sp-only{
+    display:block;
+}
+
+.pc-only{
+    display: none;
+}
+
+// タブレット415pxから959pxまで
+@media screen and (min-width:$breakpoint-m){
+    .sp-only{
+        display:none;
+    }
+
+    .pc-only{
+        display: block;
+    }
+    
+}
+
+//　PC用デザイン960pxから
+@media screen and (min-width:$breakpoint-l){
+    
+}

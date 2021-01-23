@@ -6,6 +6,9 @@
 @import "layout";
 @import "table";
 
+/***************************
+    margin,padding
+***************************/
 @for $i from 0 through 10 {
     .mt#{$i} {
         margin-top: #{$i * 8}px !important;
@@ -36,22 +39,25 @@
     }    
 }
 
+/******************
+    display
+******************/
 .sp-only{
-    display:block;
+    display:block !important;
 }
 
 .pc-only{
-    display: none;
+    display: none !important;
 }
 
 // タブレット415pxから959pxまで
 @media screen and (min-width:$breakpoint-m){
     .sp-only{
-        display:none;
+        display:none !important;
     }
 
     .pc-only{
-        display: block;
+        display: block !important;
     }
     
 }

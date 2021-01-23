@@ -3,13 +3,13 @@
 // モバイルファースト
 .content-main{
     background:white;
-    margin:8px;
-    padding:8px;
+    margin:.5em;
+    padding:.5em;
 }
 
 .content-block{
-    padding: 0 8px;
-    margin-bottom: 16px;
+    // padding: 0 .5em;
+    margin-bottom: 1em;
     &.center{
         text-align:center;
     }
@@ -20,8 +20,8 @@
 
 .content-block-horizontal{
     display:inline-block;
-    padding: 0 8px;
-    margin-bottom:16px;
+    padding: 0 .5em;
+    margin-bottom: 1em;
     vertical-align: top;
     &.align-middle{
         vertical-align: middle;
@@ -31,22 +31,26 @@
     }
 }
 
+.content-indent{
+    margin-left:$space;
+}
+
 .text-center{
     text-align:center;
 }
 
+
 // タブレット415pxから959pxまで
 @media screen and (min-width:$breakpoint-m){
-    // .content-main{
-    //     margin:8px auto;
-    //     max-width:415px;
-    // }    
+    .content-indent{
+        margin-left:$space-m;
+    }    
 }
 
 //　PC用デザイン960pxから
 @media screen and (min-width:$breakpoint-l){
     .content-main{
-        margin:8px auto;
-        max-width:800px;
+        margin: .5em auto;
+        max-width: 50em;
     }    
 }
