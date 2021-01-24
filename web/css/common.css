@@ -54,16 +54,19 @@
 }
 
 .card {
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   -webkit-box-shadow: 0 0 15px -6px #00000073;
   box-shadow: 0 0 15px -6px #00000073;
   background-color: white;
-  padding: 16px;
-  width: 264px;
+  width: 20em;
+}
+
+.card-body {
+  padding: 1.5em;
 }
 
 .card p {
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 }
 
 label {
@@ -270,7 +273,6 @@ input[type="submit"] {
 
 .content-block-horizontal {
   display: inline-block;
-  padding: 0 .5em;
   margin-bottom: 1em;
   vertical-align: top;
 }
