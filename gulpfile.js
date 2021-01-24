@@ -7,6 +7,7 @@ const browser = require("browser-sync");
 const autoprefixer = require("gulp-autoprefixer");
 const plumber = require("gulp-plumber");
 const fractal = require('@frctl/fractal').create();
+const sourcemaps = require("gulp-sourcemaps");
 const logger = fractal.cli.console;    // keep a reference to the fractal CLI console utility
 
 /**
@@ -131,6 +132,7 @@ gulp.task(task_server, function(db) {
 gulp.task(task_sass,function(db){
   /* sassのコンパイル(./web/sass → ./web/css) */
   gulp.src(dir_sass)                        // gulp.src()...読み込むファイルの設定
+    .pipe(sourcemaps.init())                // sourcemapファイルを初期化
     .pipe(plumber())                        // plumber()...エラーが起きたとしても強制終了させない
     .pipe(sass({outputStyle:'expanded'}))   // sassからcssを圧縮して出力する
                                             // pipe()...srcで取得したファイルに行う処理を記載
@@ -138,8 +140,9 @@ gulp.task(task_sass,function(db){
     .pipe(autoprefixer({                    // autoprefixer()...ベンダープレフィックスの付与
       cascade:false
     }))
-    .pipe(gulp.dest(dir_app + "/css"))         // gulp.dest()...出力したい場所を記載
-    .pipe(gulp.dest(dir_assets + "/css")); // 変換したファイルをコピー(./web/css/** → ./assets/css)
+    .pipe(sourcemaps.write('.'))            // sourcemapファイルを出力する
+    .pipe(gulp.dest(dir_app + "/css"))      // gulp.dest()...出力したい場所を記載
+    .pipe(gulp.dest(dir_assets + "/css"));  // 変換したファイルをコピー(./web/css/** → ./assets/css)
 
   /* ディレクトリごとコピー(./web/css/** → ./assets/css) */
   // gulp.src(__dirname + "/web/css/**")

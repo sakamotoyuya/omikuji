@@ -26,6 +26,7 @@ npm install browser-sync --save-dev
 npm install gulp-plumber --save-dev
 npm install --save-dev gulp-autoprefixer
 npm install @frctl/fractal --save-dev
+npm install gulp-sourcemaps --save-dev
 ```
 ## scssのビルドについて
 - ビルド元のscss
