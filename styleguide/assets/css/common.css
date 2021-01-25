@@ -1,6 +1,5 @@
 .btn {
   display: inline-block;
-  margin-bottom: 1em;
   padding: 15px 1.5em;
   border-radius: 44px;
   background: white;
@@ -325,6 +324,25 @@ input[type="submit"] {
   }
 }
 
+/***************************
+    flexitems
+***************************/
+.content-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content-flex div:not(:last-of-type) {
+  margin-right: .5em;
+}
+
+.content-flex.center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .table-wrap {
   overflow: scroll;
   width: 100%;
@@ -361,19 +379,6 @@ table th {
 
 table td {
   padding: .75rem;
-}
-
-table .edit {
-  text-align: center;
-}
-
-table .edit .btn {
-  margin: 0;
-  padding: 6px;
-}
-
-table .edit .btn:nth-of-type(1) {
-  margin-right: 8px;
 }
 
 .mt0 {

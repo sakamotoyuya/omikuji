@@ -39,6 +39,7 @@
 }
 
 
+
 // タブレット415pxから959pxまで
 @media screen and (min-width:$breakpoint-m){
     .content-indent{
@@ -52,4 +53,17 @@
         margin: .5em auto;
         max-width: 50em;
     }    
+}
+
+/***************************
+    flexitems
+***************************/
+.content-flex{
+    display: flex;
+    div:not(:last-of-type){
+        margin-right:.5em;
+    }
+    &.center{
+        justify-content: center;
+    }
 }
