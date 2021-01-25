@@ -4,7 +4,10 @@
     margin-bottom:1em;
     box-shadow: 0 0 15px -6px #00000073;
     background-color: white;
-    width: 20em;
+    width: 17em;
+    &-img{
+        width:100%;
+    }
     &-body{
         padding:1.5em;
     }

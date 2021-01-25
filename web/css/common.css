@@ -1,8 +1,7 @@
 .btn {
   display: inline-block;
-  min-width: 80px;
-  margin-bottom: 16px;
-  padding: 15px 24px;
+  margin-bottom: 1em;
+  padding: 15px 1.5em;
   border-radius: 44px;
   background: white;
   font-size: 14px;
@@ -11,6 +10,22 @@
   transition: 0.2s;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+.btn-size-3 {
+  min-width: 3em;
+}
+
+.btn-size-6 {
+  min-width: 6em;
+}
+
+.btn-size-9 {
+  min-width: 9em;
+}
+
+.btn-size-block {
+  display: block;
 }
 
 .btn.btn-theme {
@@ -58,7 +73,11 @@
   -webkit-box-shadow: 0 0 15px -6px #00000073;
   box-shadow: 0 0 15px -6px #00000073;
   background-color: white;
-  width: 20em;
+  width: 17em;
+}
+
+.card-img {
+  width: 100%;
 }
 
 .card-body {

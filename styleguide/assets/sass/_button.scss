@@ -3,9 +3,8 @@
 
 .btn{
     display:inline-block;
-    min-width: 80px;
-    margin-bottom: 16px;
-    padding: 15px 24px;
+    margin-bottom: 1em;
+    padding: 15px 1.5em;
     border-radius: 44px;
     background:white;
     font-size:14px;
@@ -13,6 +12,19 @@
     transition: 0.2s;
     box-shadow: 0 3px 8px rgba(0,0,0, 0.16);
     
+    &-size-3{
+        min-width:3em;
+    }
+    &-size-6{
+        min-width:6em;
+    }
+    &-size-9{
+        min-width:9em;
+    }
+    &-size-block{
+        display:block;
+    }
+
     &.btn-theme{
         background-color: $color-theme;
         color:white;
