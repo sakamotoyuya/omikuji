@@ -3,7 +3,6 @@
 
 .btn{
     display:inline-block;
-    // margin-bottom: 1em;
     padding: 15px 1.5em;
     border-radius: 44px;
     background:white;
@@ -12,16 +11,16 @@
     transition: 0.2s;
     box-shadow: 0 3px 8px rgba(0,0,0, 0.16);
     
-    &-size-3{
+    &.size-3{
         min-width:3em;
     }
-    &-size-6{
+    &.size-6{
         min-width:6em;
     }
-    &-size-9{
+    &.size-9{
         min-width:9em;
     }
-    &-size-block{
+    &.size-block{
         display:block;
     }
 
@@ -36,6 +35,10 @@
     &.btn-success{
         background-color: $color-success;
         color:white;
+    }
+    &.btn-none{
+        background-color: $color-none;
+        color:$color-gray;
     }
     &.btn-b{
         border: solid 1px black;
@@ -53,8 +56,13 @@
         border: solid 1px $color-success;
         color:$color-success;
     }
+    &.btn-b-none{
+        background-color: $color-none;
+        border:solid 1px $color-gray;
+        color:$color-gray;
+    }
     &:hover{
-        cursor: hand;
+        cursor: pointer;
         opacity: 0.6;
     }
 }

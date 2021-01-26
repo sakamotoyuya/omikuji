@@ -11,19 +11,19 @@
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
-.btn-size-3 {
+.btn.size-3 {
   min-width: 3em;
 }
 
-.btn-size-6 {
+.btn.size-6 {
   min-width: 6em;
 }
 
-.btn-size-9 {
+.btn.size-9 {
   min-width: 9em;
 }
 
-.btn-size-block {
+.btn.size-block {
   display: block;
 }
 
@@ -40,6 +40,11 @@
 .btn.btn-success {
   background-color: #006CFF;
   color: white;
+}
+
+.btn.btn-none {
+  background-color: #DCDCDC;
+  color: #9C9C9C;
 }
 
 .btn.btn-b {
@@ -62,8 +67,14 @@
   color: #006CFF;
 }
 
+.btn.btn-b-none {
+  background-color: #DCDCDC;
+  border: solid 1px #9C9C9C;
+  color: #9C9C9C;
+}
+
 .btn:hover {
-  cursor: hand;
+  cursor: pointer;
   opacity: 0.6;
 }
 
