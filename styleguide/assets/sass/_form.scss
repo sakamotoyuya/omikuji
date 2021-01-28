@@ -18,7 +18,6 @@ label{
         margin: 0;
         width: 100%;
         height: 46px;
-        border-radius: 45px;
         box-sizing: border-box;
         background:transparent;
         
@@ -39,7 +38,7 @@ label{
             box-sizing: border-box;
             &:placeholder-shown{
                 + label{
-                    top:.3em;
+                    top:.4em;
                     left:1.3em;
                 }
             }
@@ -52,6 +51,7 @@ label{
         }
     
         &.error{
+            margin-bottom:.2em;
             input{
                 box-sizing: border-box;
                 box-shadow: 0 0 0 .2rem rgba($color: $color-danger, $alpha: 0.5);
@@ -79,8 +79,11 @@ input{
     &[type="text"],&[type="password"]{
         padding: 15px 20px;
         font-size:16px;
-        border-radius: 45px;
+        border-radius: .5em;
         border:solid 1px black;
+        &.round{
+            border-radius:45px;
+        }
     }
 
     &[type="radio"]{

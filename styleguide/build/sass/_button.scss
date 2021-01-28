@@ -4,12 +4,16 @@
 .btn{
     display:inline-block;
     padding: 15px 1.5em;
-    border-radius: 44px;
+    border-radius: .3rem;
     background:white;
     font-size:14px;
     text-align: center;
     transition: 0.2s;
     box-shadow: 0 3px 8px rgba(0,0,0, 0.16);
+
+    &.round{
+        border-radius: 44px;
+    }
     
     &.size-3{
         min-width:3em;
@@ -36,8 +40,8 @@
         background-color: $color-success;
         color:white;
     }
-    &.btn-none{
-        background-color: $color-none;
+    &.btn-disabled{
+        background-color: $color-disabled;
         color:$color-gray;
     }
     &.btn-b{
@@ -56,12 +60,13 @@
         border: solid 1px $color-success;
         color:$color-success;
     }
-    &.btn-b-none{
-        background-color: $color-none;
+    &.btn-b-disabled{
+        background-color: $color-disabled;
         border:solid 1px $color-gray;
         color:$color-gray;
     }
     &:hover{
+        -webkit-backface-visibility: hidden;//チラつき防止、赤色背景を透過させた時にちらつくための対策
         cursor: pointer;
         opacity: 0.6;
     }

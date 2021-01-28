@@ -1,7 +1,7 @@
 .btn {
   display: inline-block;
   padding: 15px 1.5em;
-  border-radius: 44px;
+  border-radius: .3rem;
   background: white;
   font-size: 14px;
   text-align: center;
@@ -9,6 +9,10 @@
   transition: 0.2s;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+.btn.round {
+  border-radius: 44px;
 }
 
 .btn.size-3 {
@@ -42,7 +46,7 @@
   color: white;
 }
 
-.btn.btn-none {
+.btn.btn-disabled {
   background-color: #DCDCDC;
   color: #9C9C9C;
 }
@@ -67,13 +71,14 @@
   color: #006CFF;
 }
 
-.btn.btn-b-none {
+.btn.btn-b-disabled {
   background-color: #DCDCDC;
   border: solid 1px #9C9C9C;
   color: #9C9C9C;
 }
 
 .btn:hover {
+  -webkit-backface-visibility: hidden;
   cursor: pointer;
   opacity: 0.6;
 }
@@ -117,7 +122,6 @@ label {
   margin: 0;
   width: 100%;
   height: 46px;
-  border-radius: 45px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: transparent;
@@ -145,13 +149,17 @@ label {
 }
 
 .input-wrap .input-label input:placeholder-shown + label {
-  top: .3em;
+  top: .4em;
   left: 1.3em;
 }
 
 .input-wrap .input-label input:not(placeholder-shown) + label {
   top: -1.5em;
   left: .5em;
+}
+
+.input-wrap .input-label.error {
+  margin-bottom: .2em;
 }
 
 .input-wrap .input-label.error input {
@@ -187,8 +195,12 @@ input:focus {
 input[type="text"], input[type="password"] {
   padding: 15px 20px;
   font-size: 16px;
-  border-radius: 45px;
+  border-radius: .5em;
   border: solid 1px black;
+}
+
+input[type="text"].round, input[type="password"].round {
+  border-radius: 45px;
 }
 
 input[type="radio"] {
