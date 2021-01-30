@@ -331,6 +331,9 @@ input[type="submit"] {
 }
 
 @media screen and (min-width: 415px) {
+  .content-main {
+    margin: 0 .5em;
+  }
   .content-indent {
     margin-left: 2em;
   }
@@ -338,7 +341,7 @@ input[type="submit"] {
 
 @media screen and (min-width: 960px) {
   .content-main {
-    margin: .5em auto;
+    margin: 0 auto;
     max-width: 50em;
   }
 }
@@ -489,8 +492,8 @@ table td {
 ***************************/
 .sp-only .nav-btn {
   position: fixed;
-  top: .5em;
-  right: .5em;
+  top: 1em;
+  right: 1em;
   height: 1.5em;
   -webkit-animation: show .4s forwards;
   animation: show .4s forwards;
@@ -554,7 +557,7 @@ table td {
   box-sizing: border-box;
   padding: 1em;
   position: absolute;
-  top: 1.5em;
+  top: 1em;
   left: calc(50% - 12em);
   width: 24em;
   height: 7em;
