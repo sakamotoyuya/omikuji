@@ -43,7 +43,7 @@
 // タブレット415pxから959pxまで
 @media screen and (min-width:$breakpoint-m){
     .content-main{
-        margin:0 .5em;
+        // margin:0 .5em;
     }
     .content-indent{
         margin-left:$space-m;
@@ -53,7 +53,8 @@
 //　PC用デザイン960pxから
 @media screen and (min-width:$breakpoint-l){
     .content-main{
-        margin: 0 auto;
+        // margin: 0 auto;
+        margin:.5em auto;
         max-width: 50em;
     }    
 }

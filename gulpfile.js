@@ -183,7 +183,7 @@ gulp.task(task_reload,function(db){
  */
 gulp.task(task_watch,function(db){
   // gulp.watch(監視するファイルパス,gulp.parallel([実行タスク名]));・・・並列実行
-  gulp.watch("./web/sass/**/*.scss",gulp.parallel([task_sass,task_reload]));//※並列実行の根拠なし直列で動くと思う
+  gulp.watch(["./web/sass/**/*.scss","./web/js/**/*.js"],gulp.parallel([task_sass,task_reload]));//※並列実行の根拠なし直列で動くと思う
   // gulp.watch(監視するファイルパス,gulp.series([実行タスク名]));・・・直列実行
   gulp.watch(["./**/*.html","./**/*.hbs"],gulp.series([task_reload]));
   db();

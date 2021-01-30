@@ -331,9 +331,6 @@ input[type="submit"] {
 }
 
 @media screen and (min-width: 415px) {
-  .content-main {
-    margin: 0 .5em;
-  }
   .content-indent {
     margin-left: 2em;
   }
@@ -341,7 +338,7 @@ input[type="submit"] {
 
 @media screen and (min-width: 960px) {
   .content-main {
-    margin: 0 auto;
+    margin: .5em auto;
     max-width: 50em;
   }
 }
@@ -448,43 +445,126 @@ table td {
 /***************************
     .header
 ***************************/
-.header-wrap {
+.sp-only .nav1-btn {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  height: 1.5em;
+  z-index: 9998;
+  -webkit-animation: show .4s forwards;
+  animation: show .4s forwards;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.sp-only .nav1-btn.is-active {
+  right: calc(70% + 1em);
+}
+
+.sp-only .nav1-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: fixed;
   top: 0;
-  right: -15em;
+  right: calc(-70%);
   z-index: 9999;
+  width: 70%;
+  height: 100vh;
+  background-color: white;
   -webkit-transition: .3s;
   transition: .3s;
-  pointer-events: none;
 }
 
-.header-wrap.is-active {
+.sp-only .nav1-menu.is-active {
   right: 0;
 }
 
-.header-btn {
-  height: 1.5em;
-  pointer-events: all;
+.sp-only .nav1-menu.is-active + .nav1-bg {
+  display: block;
 }
 
-.header-menu {
-  width: 15em;
+.sp-only .nav1-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9997;
+  width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 0, 0.4);
-  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.header-inner {
+.pc-only .nav1-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em;
+  position: absolute;
+  top: 1.5em;
+  left: calc(50% - 12em);
+  width: 24em;
+  height: 7em;
+  border-radius: 1.5em;
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
+  -webkit-animation: show .4s forwards;
+  animation: show .4s forwards;
 }
 
-.header-inner .header-item:not(:last-of-type) {
-  margin-right: .5em;
+.pc-only .nav1-item:not(:last-of-type) {
+  margin-right: 1em;
+}
+
+@-webkit-keyframes show {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes show {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.nav1-space {
+  padding-bottom: calc(1.5em + 2.5em);
+}
+
+@media screen and (min-width: 415px) {
+  .nav1-space {
+    padding-bottom: calc(7em + 1.5em);
+  }
 }
 
 /***************************
@@ -557,31 +637,20 @@ table td {
   box-sizing: border-box;
   padding: 1em;
   position: absolute;
-  top: 1em;
+  top: 1.5em;
   left: calc(50% - 12em);
   width: 24em;
   height: 7em;
   border-radius: 1.5em;
   background-color: white;
-  -webkit-box-shadow: 0px 0 2px;
-  box-shadow: 0px 0 2px;
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
   -webkit-animation: show .4s forwards;
   animation: show .4s forwards;
 }
 
 .pc-only .nav-item:not(:last-of-type) {
   margin-right: 1em;
-}
-
-@-webkit-keyframes show {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
 }
 
 @keyframes show {
@@ -596,7 +665,13 @@ table td {
 }
 
 .nav-space {
-  padding-bottom: calc(7em + 1.5em);
+  padding-bottom: calc(1.5em + 1.5em);
+}
+
+@media screen and (min-width: 415px) {
+  .nav-space {
+    padding-bottom: calc(7em + 1.5em);
+  }
 }
 
 .mt0 {
