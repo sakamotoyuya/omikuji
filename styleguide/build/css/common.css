@@ -356,10 +356,37 @@ input[type="submit"] {
   margin-right: .5em;
 }
 
+.content-flex.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.content-flex.column div:not(:last-of-type) {
+  margin-right: 0;
+  margin-bottom: .5em;
+}
+
 .content-flex.center {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.content-flex.end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.content-flex.between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .table-wrap {
@@ -398,6 +425,91 @@ table th {
 
 table td {
   padding: .75rem;
+}
+
+/***************************
+    .header
+***************************/
+.header-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: -15em;
+  z-index: 9999;
+  -webkit-transition: .3s;
+  transition: .3s;
+  pointer-events: none;
+}
+
+.header-wrap.is-active {
+  right: 0;
+}
+
+.header-btn {
+  height: 1.5em;
+  pointer-events: all;
+}
+
+.header-menu {
+  width: 15em;
+  height: 100vh;
+  background: rgba(255, 255, 0, 0.4);
+  pointer-events: all;
+}
+
+.header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-inner .header-item:not(:last-of-type) {
+  margin-right: .5em;
+}
+
+/***************************
+    .nav
+***************************/
+.nav-btn {
+  position: fixed;
+  top: .5em;
+  right: .5em;
+  height: 1.5em;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: calc(-70% - 4px);
+  z-index: 9999;
+  width: 70%;
+  height: 100vh;
+  -webkit-box-shadow: 1px 0 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.nav-menu.is-active {
+  left: 0;
+}
+
+.nav-menu.is-active + .nav-bg {
+  display: block;
+}
+
+.nav-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .mt0 {

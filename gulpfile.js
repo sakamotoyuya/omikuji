@@ -152,6 +152,10 @@ gulp.task(task_sass,function(db){
   gulp.src(__dirname + "/web/sass/**")
     .pipe(gulp.dest(dir_assets + "/sass"));
 
+    /* ディレクトリごとコピー()./web/js/** → ./assets/js) */
+  gulp.src(__dirname + "/web/js/**")
+    .pipe(gulp.dest(dir_assets + "/js"));
+
   // const items = ["button","layout","form","table","common","card","style"];
   // items.forEach(function (item){
   //   gulp.src('./web/css/' + item + '.css')

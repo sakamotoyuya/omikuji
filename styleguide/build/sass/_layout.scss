@@ -63,7 +63,21 @@
     div:not(:last-of-type){
         margin-right:.5em;
     }
+    &.column{
+        flex-direction: column;
+        div:not(:last-of-type){
+            margin-right:0;
+            margin-bottom:.5em;
+        }
+        }
     &.center{
         justify-content: center;
+        align-items: center;
+    }
+    &.end{
+        justify-content: flex-end;
+    }
+    &.between{
+        justify-content: space-between;
     }
 }

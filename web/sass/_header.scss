@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/***************************
+    .header
+***************************/
+$header-menu-width:15em;
+.header-wrap{
+    display: flex;
+    position: fixed;
+    top:0;
+    right: #{- $header-menu-width};
+    z-index:9999;
+    transition: .3s;
+    pointer-events: none;
+    &.is-active{
+        right: 0;
+    }
+}
+
+.header-btn{
+    height: 1.5em;
+    pointer-events: all;
+}
+
+.header-menu{
+    width: $header-menu-width;
+    height: 100vh;
+    background:rgba($color: yellow, $alpha: .4);
+    pointer-events: all;
+}
+
+.header-inner{
+    display: flex;
+    .header-item:not(:last-of-type){
+        margin-right:.5em;
+    }
+}
+
+/***************************
+    .nav
+***************************/
+$nav-menu-width:70%;
+$pc-menu-height:7em;
+
+// .nav{
+//     background:white;
+// }
+.sp-only{
+    .nav-btn{
+        position: fixed;
+        top:.5em;
+        right:.5em;
+        height: 1.5em;
+        animation: show .4s forwards;
+    }
+    
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top:0;
+        left: calc(#{- $nav-menu-width });
+        z-index: 9999;
+        width: $nav-menu-width;
+        height: 100vh;
+        background-color:white;
+        transition: .3s;
+    
+        &.is-active{
+            left: 0;
+            + .nav-bg{
+                display: block;
+            }
+        }
+    }
+    .nav-bg{
+        display: none;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 9998;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.5);
+    }
+}
+
+.pc-only{
+    .nav-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding:1em;
+        position:absolute;
+        top:1.5em;
+        left:calc(50% - 12em);
+        width: 24em;
+        height: $pc-menu-height;
+        border-radius: 1.5em;
+        background-color:white;
+        box-shadow: 0px 0 2px;
+        animation: show .4s forwards;
+        // @media screen and(min-width:$breakpoint-m){
+        //     animation: show .4s forwards;
+        // }
+    }
+    .nav-item:not(:last-of-type){
+        margin-right: 1em;
+    }
+    
+}
+@keyframes show {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.nav-space{
+    padding-bottom:calc(#{$pc-menu-height} + 1.5em);
+}
