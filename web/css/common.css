@@ -443,12 +443,11 @@ table td {
 }
 
 /***************************
-    .nav1
+    .nav
 ***************************/
-.sp-only .nav1-btn {
+.sp-only .nav-btn {
   position: absolute;
   top: 1.25em;
-  right: 1.25em;
   height: 1.5em;
   opacity: .4;
   z-index: 9998;
@@ -458,20 +457,33 @@ table td {
   transition: .3s;
 }
 
-.sp-only .nav1-btn.nav1-fixed {
+.sp-only .nav-btn.nav-fixed {
   position: fixed;
 }
 
-.sp-only .nav1-btn.is-active {
+.sp-only .nav-btn.nav-right {
+  right: 1.25em;
+}
+
+.sp-only .nav-btn.nav-right.is-active {
   right: calc(70% + 1.25em);
   opacity: 1;
 }
 
-.sp-only .nav1-btn:hover {
+.sp-only .nav-btn.nav-left {
+  left: 1.25em;
+}
+
+.sp-only .nav-btn.nav-left.is-active {
+  left: calc(70% + 1.25em);
   opacity: 1;
 }
 
-.sp-only .nav1-menu {
+.sp-only .nav-btn:hover {
+  opacity: 1;
+}
+
+.sp-only .nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -487,7 +499,6 @@ table td {
   align-items: center;
   position: fixed;
   top: 0;
-  right: calc(-70%);
   z-index: 9999;
   width: 70%;
   height: 100vh;
@@ -496,15 +507,31 @@ table td {
   transition: .3s;
 }
 
-.sp-only .nav1-menu.is-active {
+.sp-only .nav-menu.nav-right {
+  right: calc(-70%);
+}
+
+.sp-only .nav-menu.nav-right.is-active {
   right: 0;
 }
 
-.sp-only .nav1-menu.is-active + .nav1-bg {
+.sp-only .nav-menu.nav-right.is-active + .nav-bg {
   display: block;
 }
 
-.sp-only .nav1-bg {
+.sp-only .nav-menu.nav-left {
+  left: calc(-70%);
+}
+
+.sp-only .nav-menu.nav-left.is-active {
+  left: 0;
+}
+
+.sp-only .nav-menu.nav-left.is-active + .nav-bg {
+  display: block;
+}
+
+.sp-only .nav-bg {
   display: none;
   position: fixed;
   top: 0;
@@ -515,7 +542,7 @@ table td {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.pc-only .nav1-menu {
+.pc-only .nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,11 +568,11 @@ table td {
   animation: show .4s forwards;
 }
 
-.pc-only .nav1-menu.nav1-fixed {
+.pc-only .nav-menu.nav-fixed {
   position: fixed;
 }
 
-.pc-only .nav1-item:not(:last-of-type) {
+.pc-only .nav-item:not(:last-of-type) {
   margin-right: 1em;
 }
 
@@ -572,121 +599,8 @@ table td {
 }
 
 @media screen and (min-width: 415px) {
-  .nav1-space {
-    padding-top: calc(7em + 1.5em);
-  }
-}
-
-/***************************
-    .nav2
-***************************/
-.sp-only .nav2-btn {
-  position: absolute;
-  top: 1.25em;
-  right: 1.25em;
-  height: 1.5em;
-  opacity: .4;
-  z-index: 9998;
-  -webkit-animation: show .4s forwards;
-  animation: show .4s forwards;
-}
-
-.sp-only .nav2-btn.nav2-fixed {
-  position: fixed;
-}
-
-.sp-only .nav2-btn:hover {
-  opacity: 1;
-}
-
-.sp-only .nav2-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: calc(-70%);
-  z-index: 9999;
-  width: 70%;
-  height: 100vh;
-  background-color: white;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-.sp-only .nav2-menu.is-active {
-  left: 0;
-}
-
-.sp-only .nav2-menu.is-active + .nav2-bg {
-  display: block;
-}
-
-.sp-only .nav2-bg {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9997;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.pc-only .nav2-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 1em;
-  position: absolute;
-  top: 1.5em;
-  left: calc(50% - 12em);
-  width: 24em;
-  height: 7em;
-  border-radius: 1.5em;
-  background-color: white;
-  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
-  -webkit-animation: show .4s forwards;
-  animation: show .4s forwards;
-}
-
-.pc-only .nav2-item:not(:last-of-type) {
-  margin-right: 1em;
-}
-
-@keyframes show {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@media screen and (min-width: 415px) {
-  .nav2-space {
-    padding-top: calc(7em + 1.5em);
+  .nav-space {
+    padding-top: calc(7em + 2em);
   }
 }
 
