@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+// モバイルファースト
+.content-main{
+    background:white;
+    margin:.5em;
+    padding:.5em;
+}
+
+.content-block{
+    // padding: 0 .5em;
+    margin-bottom: 1em;
+    &.center{
+        text-align:center;
+    }
+    .content-block-horizontal{
+        text-align:left
+    }
+}
+
+.content-block-horizontal{
+    display:inline-block;
+    margin-bottom: 1em;
+    vertical-align: top;
+    &.align-middle{
+        vertical-align: middle;
+    }
+    &.align-bottom{
+        vertical-align: bottom;
+    }
+}
+
+.content-indent{
+    margin-left:$space;
+}
+
+.text-center{
+    text-align:center;
+}
+
+
+
+// タブレット415pxから959pxまで
+@media screen and (min-width:$breakpoint-m){
+    .content-main{
+        // margin:0 .5em;
+    }
+    .content-indent{
+        margin-left:$space-m;
+    }    
+}
+
+//　PC用デザイン960pxから
+@media screen and (min-width:$breakpoint-l){
+    .content-main{
+        // margin: 0 auto;
+        margin:.5em auto;
+        max-width: 50em;
+    }    
+}
+
+/***************************
+    flexitems
+***************************/
+.content-flex{
+    display: flex;
+    div:not(:last-of-type){
+        margin-right:.5em;
+    }
+    &.column{
+        flex-direction: column;
+        div:not(:last-of-type){
+            margin-right:0;
+            margin-bottom:.5em;
+        }
+        }
+    &.center{
+        justify-content: center;
+    }
+    &.end{
+        justify-content: flex-end;
+    }
+    &.between{
+        justify-content: space-between;
+    }
+    &.align-start{
+        align-items: flex-start;
+    }
+    &.align-center{
+        align-items: center;
+    }
+    &.align-end{
+        align-items: flex-end;
+    }
+}

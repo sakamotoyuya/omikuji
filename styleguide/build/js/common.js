@@ -1,0 +1,9 @@
+$('.nav-btn,.nav-bg').on('click',function(){
+    if($('.nav-menu').hasClass('is-active')){
+        $('.nav-menu').removeClass('is-active');
+        $('.nav-btn').removeClass('is-active');
+    }else{
+        $('.nav-menu').addClass('is-active');
+        $('.nav-btn').addClass('is-active');
+    }
+});

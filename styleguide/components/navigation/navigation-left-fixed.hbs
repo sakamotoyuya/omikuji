@@ -1,0 +1,51 @@
+<!-- ナビゲーションアイテム -->
+<nav>
+
+    <div class="sp-only">
+        <div class="btn nav-btn nav-left nav-fixed">三</div>
+        <div class="nav-menu nav-left">
+            <div class="nav-item">アイコン</div>
+            <div class="nav-item">登録</div>
+            <div class="nav-item">履歴</div>
+            <div class="nav-item">設定</div>
+            <div class="nav-item">ログアウト</div>
+        </div>
+        <div class="nav-bg"></div>
+    </div>
+    <div class="pc-only">
+        <div class="nav-menu nav-fixed">
+            <div class="nav-item">アイコン</div>
+            <div class="nav-item">登録</div>
+            <div class="nav-item">履歴</div>
+            <div class="nav-item">設定</div>
+            <div class="nav-item">ログアウト</div>
+        </div>
+    </div>
+</nav>
+<div class="content-main nav-space">
+    <h1>ナビゲーションデザイン（左）</h1>
+    <div class="content-block">
+        <h2>PC版表示について</h2>
+        <div class="content-indent">
+            <h3>共通デザイン</h3>
+            <p>上部中央にナビゲーションメニューを表示する</p>
+            <p>※ナビゲーション領域分下に下げるために、.content-mainに.nav-spaceの付与が必須</p>
+            
+            <h3>メニューの固定表示</h3>
+            <p>.nav-menuに.nav-fixedを付与することでメニュー位置の固定化が可能</p>
+        </div>
+    </div>
+    <div class="content-block">
+        <h2>SP版表示について</h2>
+        <div class="content-indent">
+            <h3>右側表示</h3>
+            <p>.nav-btn、.nav-menuに.nav-rightを付与する</p>
+            <p>ボタンタップ時は、右側からメニューをスワイプイン表示する。</p>
+            
+            <h3>左側表示(本ページデザイン)</h3>
+            <p>.nav-btn、.nav-menuに.nav-leftを付与する</p>
+            <p>ボタンタップ時は、左側からメニューをスワイプイン表示する。</p>
+        </div>
+    </div>
+
+</div>
