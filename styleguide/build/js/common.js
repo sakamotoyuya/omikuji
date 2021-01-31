@@ -8,10 +8,10 @@ $('.nav1-btn,.nav1-bg').on('click',function(){
     }
 });
 
-$('.nav-btn,.nav-bg').on('click',function(){
-    if($('.nav-menu').hasClass('is-active')){
-        $('.nav-menu').removeClass('is-active');
+$('.nav2-btn,.nav2-bg').on('click',function(){
+    if($('.nav2-menu').hasClass('is-active')){
+        $('.nav2-menu').removeClass('is-active');
     }else{
-        $('.nav-menu').addClass('is-active');
+        $('.nav2-menu').addClass('is-active');
     }
 });

@@ -443,13 +443,14 @@ table td {
 }
 
 /***************************
-    .header
+    .nav1
 ***************************/
 .sp-only .nav1-btn {
-  position: fixed;
-  top: 1em;
-  right: 1em;
+  position: absolute;
+  top: 1.25em;
+  right: 1.25em;
   height: 1.5em;
+  opacity: .4;
   z-index: 9998;
   -webkit-animation: show .4s forwards;
   animation: show .4s forwards;
@@ -457,8 +458,17 @@ table td {
   transition: .3s;
 }
 
+.sp-only .nav1-btn.nav1-fixed {
+  position: fixed;
+}
+
 .sp-only .nav1-btn.is-active {
-  right: calc(70% + 1em);
+  right: calc(70% + 1.25em);
+  opacity: 1;
+}
+
+.sp-only .nav1-btn:hover {
+  opacity: 1;
 }
 
 .sp-only .nav1-menu {
@@ -531,6 +541,10 @@ table td {
   animation: show .4s forwards;
 }
 
+.pc-only .nav1-menu.nav1-fixed {
+  position: fixed;
+}
+
 .pc-only .nav1-item:not(:last-of-type) {
   margin-right: 1em;
 }
@@ -557,29 +571,35 @@ table td {
   }
 }
 
-.nav1-space {
-  padding-bottom: calc(1.5em + 2.5em);
-}
-
 @media screen and (min-width: 415px) {
   .nav1-space {
-    padding-bottom: calc(7em + 1.5em);
+    padding-top: calc(7em + 1.5em);
   }
 }
 
 /***************************
-    .nav
+    .nav2
 ***************************/
-.sp-only .nav-btn {
-  position: fixed;
-  top: 1em;
-  right: 1em;
+.sp-only .nav2-btn {
+  position: absolute;
+  top: 1.25em;
+  right: 1.25em;
   height: 1.5em;
+  opacity: .4;
+  z-index: 9998;
   -webkit-animation: show .4s forwards;
   animation: show .4s forwards;
 }
 
-.sp-only .nav-menu {
+.sp-only .nav2-btn.nav2-fixed {
+  position: fixed;
+}
+
+.sp-only .nav2-btn:hover {
+  opacity: 1;
+}
+
+.sp-only .nav2-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -604,26 +624,26 @@ table td {
   transition: .3s;
 }
 
-.sp-only .nav-menu.is-active {
+.sp-only .nav2-menu.is-active {
   left: 0;
 }
 
-.sp-only .nav-menu.is-active + .nav-bg {
+.sp-only .nav2-menu.is-active + .nav2-bg {
   display: block;
 }
 
-.sp-only .nav-bg {
+.sp-only .nav2-bg {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9998;
+  z-index: 9997;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.pc-only .nav-menu {
+.pc-only .nav2-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -649,7 +669,7 @@ table td {
   animation: show .4s forwards;
 }
 
-.pc-only .nav-item:not(:last-of-type) {
+.pc-only .nav2-item:not(:last-of-type) {
   margin-right: 1em;
 }
 
@@ -664,13 +684,9 @@ table td {
   }
 }
 
-.nav-space {
-  padding-bottom: calc(1.5em + 1.5em);
-}
-
 @media screen and (min-width: 415px) {
-  .nav-space {
-    padding-bottom: calc(7em + 1.5em);
+  .nav2-space {
+    padding-top: calc(7em + 1.5em);
   }
 }
 
