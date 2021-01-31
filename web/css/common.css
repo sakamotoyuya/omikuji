@@ -3,12 +3,13 @@
   padding: 15px 1.5em;
   border-radius: .3rem;
   background: white;
-  font-size: 14px;
   text-align: center;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+  font-size: 14px;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .btn.round {
@@ -108,12 +109,15 @@ label {
 }
 
 .input-wrap {
-  display: inline-block;
+  display: block;
   padding: 1.2em 0;
+  min-width: 16em;
+}
+
+.input-wrap.inline {
   width: 100%;
   min-width: 15em;
   max-width: 20em;
-  vertical-align: top;
 }
 
 .input-wrap .input-label {
@@ -133,7 +137,7 @@ label {
   color: gray;
   -webkit-transition: .2s;
   transition: .2s;
-  font-size: 1.2em;
+  font-size: 1em;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -149,13 +153,13 @@ label {
 }
 
 .input-wrap .input-label input:placeholder-shown + label {
-  top: .4em;
-  left: 1.3em;
+  top: .6em;
+  left: 1.2em;
 }
 
 .input-wrap .input-label input:not(placeholder-shown) + label {
   top: -1.5em;
-  left: .5em;
+  left: 0em;
 }
 
 .input-wrap .input-label.error {
@@ -404,6 +408,11 @@ input[type="submit"] {
   align-items: flex-end;
 }
 
+.content-flex.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .table-wrap {
   overflow: scroll;
   width: 100%;
@@ -484,6 +493,7 @@ table td {
 }
 
 .sp-only .nav-menu {
+  overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,6 +512,7 @@ table td {
   z-index: 9999;
   width: 70%;
   height: 100vh;
+  height: -webkit-fill-available;
   background-color: white;
   -webkit-transition: .3s;
   transition: .3s;
@@ -556,6 +567,7 @@ table td {
   box-sizing: border-box;
   padding: 1em;
   position: absolute;
+  z-index: 9999;
   top: 1.5em;
   left: calc(50% - 12em);
   width: 24em;
@@ -598,9 +610,14 @@ table td {
   }
 }
 
+.nav-space {
+  padding-bottom: calc(1.5em + 2.5em);
+}
+
 @media screen and (min-width: 415px) {
   .nav-space {
     padding-top: calc(7em + 2em);
+    padding-bottom: calc(7em + 2em);
   }
 }
 

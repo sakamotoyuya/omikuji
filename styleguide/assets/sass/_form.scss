@@ -6,12 +6,15 @@ label{
 }
 
 .input-wrap{
-    display: inline-block;
+    display: block;
     padding:1.2em 0;
-    width: 100%;
-    min-width:15em;
-    max-width: 20em;
-    vertical-align: top;
+    min-width: 16em;
+    &.inline{
+        width: 100%;
+        min-width:15em;
+        max-width: 20em;
+        // vertical-align: top;
+    }
     .input-label{
         position: relative;
         z-index:0;
@@ -26,7 +29,7 @@ label{
             z-index: 0;
             color:gray;
             transition: .2s;
-            font-size: 1.2em;
+            font-size: 1em;
             box-sizing: border-box;
         }
         input{
@@ -38,14 +41,14 @@ label{
             box-sizing: border-box;
             &:placeholder-shown{
                 + label{
-                    top:.4em;
-                    left:1.3em;
+                    top:.6em;
+                    left:1.2em;
                 }
             }
             &:not(placeholder-shown){
                 + label{
                     top:-1.5em;
-                    left:.5em;
+                    left:0em;
                 }
             }
         }

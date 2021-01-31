@@ -6,10 +6,11 @@
     padding: 15px 1.5em;
     border-radius: .3rem;
     background:white;
-    font-size:14px;
     text-align: center;
-    transition: 0.2s;
     box-shadow: 0 3px 8px rgba(0,0,0, 0.16);
+    font-size:14px;
+    text-decoration: none;
+    transition: 0.2s;
 
     &.round{
         border-radius: 44px;

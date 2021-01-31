@@ -37,19 +37,3 @@ h6 { font-size: .75em; }
   h5 { font-size: 1.25em; }
   h6 { font-size: 1.0em; }
 }
-
-.container{
-  width:100%;
-  background: yellow;
-  transition:0.5s;
-  &:hover{
-    transform:scale(0.8);
-  }
-}
-
-.test{
-  background-color:red;
-}
-.test1{
-  background-color:red;
-}
