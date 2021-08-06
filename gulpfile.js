@@ -2,7 +2,7 @@
  * ライブラリインポート
  */
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+var sass = require("gulp-sass")(require('sass'));
 const browser = require("browser-sync");
 const autoprefixer = require("gulp-autoprefixer");
 const plumber = require("gulp-plumber");

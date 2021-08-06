@@ -1,25 +1,36 @@
 {
   "name": "omikuji",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "本プロジェクトはomikujiアプリケーションになります。\r タスクランナーgulpにより以下のタスクを自動化しています。\r - sassの自動コンパイル\r - autoprefixerによるベンダープレフィックスの自動化\r - serverの起動\r - serverの自動リロード\r - fractal",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakamotoyuya/omikuji.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakamotoyuya/omikuji/issues"
+  },
+  "homepage": "https://github.com/sakamotoyuya/omikuji#readme",
   "devDependencies": {
-    "@frctl/fractal": "^1.5.1",
-    "browser-sync": "^2.26.7",
+    "@frctl/fractal": "^1.5.11",
+    "browser-sync": "^2.27.5",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0"
   },
   "browserslist": [
     "last 2 version",
     "> 5%",
     "ie >= 9"
-  ]
+  ],
+  "dependencies": {
+    "sass": "^1.37.5"
+  }
 }
