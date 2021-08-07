@@ -22,6 +22,7 @@ gulp
 npm init
 npm install gulp --save-dev
 npm install gulp-sass --save-dev
+npm install sass --save-dev
 npm install browser-sync --save-dev
 npm install gulp-plumber --save-dev
 npm install --save-dev gulp-autoprefixer
